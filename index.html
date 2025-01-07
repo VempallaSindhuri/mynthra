@@ -1,3 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Myntra Clone</title>
+    <link rel="stylesheet" href="./myntra.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <header>
+        <div class="logo_container">
+            <a href="#"
+              ><img
+                class="myntra_home"
+                src="https://ifp.world/wp-content/uploads/2021/05/Myntra-Logo.png"
+                alt="myntra home"
+            /></a>
+          </div>
+    
+        
+      <nav class="nav_bar">
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Footwear</a>
+        <a href="#">Beauty</a>
+        <a href="#">Studio <sup>New</sup></a>
+      </nav>
+      <div class="search_bar">
+        <span class="material-symbols-outlined search_icon">search</span>
+        <input
+          class="search_input"
+          placeholder="Search For Products,brands and more"
+        />
+      </div>
+      <div class="action_bar">
+        <div class="action_container">
+          <span class="material-symbols-outlined action_icon">person</span>
+          <span class="action_name">Profile</span>
+        </div>
 
+        <div class="action_container">
+          <span class="material-symbols-outlined action_icon"> favorite </span>
+          <span class="action_name">Wishlist</span>
+        </div>
+
+        <div class="action_container">
+          <span class="material-symbols-outlined action_icon"
+            >shopping_bag</span
+          >
+          <span class="action_name">Bag</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="banner_container">
+        <img class="banner_image" src="https://i.pinimg.com/1200x/4f/57/47/4f57472c0f1f93776cbfbb7e63946ec3.jpg" alt="Main Banner" />
+      </div>
+      <div class="category_heading">OMG Deals</div>
+      <div class="category_items">
+        <div id="cards">
+          <div id="card">
+              <div id="about">
+                  <img src="data:image/jpeg;base64,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" height="300px"
+                      width="250px" alt="">
+                  <div id="line">Pretty Feminine Women Dresses</div>
+                  <div id="cost">
+                      <div id="number">₹289</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.0</div>
+                      <div id="review">3955 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRFMd12VN2Q4wYvbU_EKMITCG_gik1G8OW7mVl0gjv4ndE2yNVqmZuZiS0jT2Pd4nP2Ov2G7BLzi8t_h5HIHjfxANdovfYgAsflexLcBD-2fMGjfDdyr_mQ_DxVU9oP&usqp=CAc"height="325px" width="250px" alt="">
+                  <div id="line">Lehenga choli withdesigner</div>
+                  <div id="cost">
+                      <div id="number">₹538</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.2</div>
+                      <div id="review">52 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQoODa96g6BCaXu0KD0FsOC98zTbP5rtcbZrNX_F9NSjKf-5GzUpSBX6_w-cjPdvlo9gJWKWj9Gnxl_XY6hD-yv6Caj0LnHU-XgMzdDqYQ" height="282px"
+                      width="250px" alt="">
+                  <div id="line"> Men and Boys Round Neck Printed Cotton Blend Blend Full Sleeve</div>
+                  <div id="cost">
+                      <div id="number">₹231</div>
+                      <div id="text">onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.2</div>
+                      <div id="review">11041 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTc6VgsXlYuUCnHZmDYkURfrE4NRYmZdhcR4stzO8yt01jTwpo5XmB5QVn8DyXA8ECbiGJ2QWzv6BW-MiOYhmKp3iAdBjqMJ4cgcksDQTdJuYf8754J0ZankA&usqp=CAc" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Daniel Carl Handbag</div>
+                  <div id="cost">
+                      <div id="number">₹222</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.0</div>
+                      <div id="review">156372 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzkvdIMm211WvjMD8abPLmtI19ZbU2R118kiN7_wvF-P8QoS8n2O2i5_w&s" height="321px"
+                      width="250px" alt="">
+                  <div id="line">Women Modern Jutties</div>
+                  <div id="cost">
+                      <div id="number">₹248</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.0</div>
+                      <div id="review">6311 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQFunjaqfykMqUit5bEgUbqI9XmCJcbn6h6dgzoB2zOeYt2AjbLI9RRuh87p0tLKX64H8GJOm8rAQ07q7rFreQ7dh3aqB0cJqExPzgZM_rdbQglsR9kW1kjqw" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Classy Women watches</div>
+                  <div id="cost">
+                      <div id="number">₹166</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.7</div>
+                      <div id="review">10229 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR7Y7xL1tgVnAuRecadqlWf25k8dFdFoAns3nWmlsbqE5PpWmr2WQvzgDOQx87nSNkbNEN8tZ8iOJy6Qac5SJsoUGHBycXPSMo9wAnyv7g" height="323px"
+                      width="250px" alt="">
+                  <div id="line">Wollen High Neck Sweater</div>
+                  <div id="cost">
+                      <div id="number">₹209</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.1</div>
+                      <div id="review">3955 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9LdMBOm-QVX3UUZZyATLgxGEEfaH3VYOMA1UL8frT2uiKyv10hThYiAU&s" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Liquid Lipsticks Matte Finish</div>
+                  <div id="cost">
+                      <div id="number">₹208</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.8</div>
+                      <div id="review">3965 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQzaeKo8KzhfDpguOdoiH1Yrp3LUMLlCWglSWRjuv17FbhLiEda68GOIdHPmgUYnDrSl9LgwhtKG95vLE6A6MU_QDqhSZUQVpzAAyVlFdEySvpzgRSM_yq-9w" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Styles earrings and Studs</div>
+                  <div id="cost">
+                      <div id="number">₹141</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.1</div>
+                      <div id="review">146 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ZTA9otWfXV1ahrfo2jWKgvpfpbpYPYDxRgHTMA4cs_axb-5zKXn39Nk&s" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Fancy Mini Fan</div>
+                  <div id="cost">
+                      <div id="number">₹606</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.8</div>
+                      <div id="review">891 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZm9XL4uL6EdjBkod0JbxsXEPoDOGRVZI7_yLeEU30RLRnweaRkIYjr94&s"height="325px" width="250px" alt="">
+                  <div id="line">Lehenga choli withdesigner</div>
+                  <div id="cost">
+                      <div id="number">₹538</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.2</div>
+                      <div id="review">52 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTWn6bQ5A9IkYc22BDWEvWDlt64MqtDeDpo5nJX-pXsWZhSfkDj7odloY06GS06aChwPQN6oCu4nyerLF3aq6L8hFc92d9kY1I5Mz9d14LY"height="325px" width="250px" alt="">
+                  <div id="line">Lehenga choli withdesigner</div>
+                  <div id="cost">
+                      <div id="number">₹538</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.2</div>
+                      <div id="review">52 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQrtAFbnAnecN6leC56g3jKPE-HTrhpwyfZW0NORqV8R9-JIDDGOrd9gU8yFRicP2F378H5sFSX15pGa_rW6P26FCJUakGXTktC0HeAGkM" height="282px"
+                      width="250px" alt="">
+                  <div id="line"> Men and Boys Round Neck Printed Cotton Blend Blend Full Sleeve</div>
+                  <div id="cost">
+                      <div id="number">₹231</div>
+                      <div id="text">onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.2</div>
+                      <div id="review">11041 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS2YN8QwKen4wR345DMmKkNNqIvIGtvot1Nbej0pK9XwGxzueX-iL9OGnNjeAbQWPvT8gCFp7wMMDEXGt5AWe9y4K_CWq5QW-ueOjbQFalq1lq70Ded1W5oCw" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Daniel Carl Handbag</div>
+                  <div id="cost">
+                      <div id="number">₹222</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.0</div>
+                      <div id="review">156372 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/367331721/eqknu_400.webp" height="321px"
+                      width="250px" alt="">
+                  <div id="line">Women Modern Jutties</div>
+                  <div id="cost">
+                      <div id="number">₹248</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.0</div>
+                      <div id="review">6311 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/314436847/e3tw3_400.webp" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Classy Women watches</div>
+                  <div id="cost">
+                      <div id="number">₹166</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.7</div>
+                      <div id="review">10229 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/177625233/dx5gu_400.webp" height="323px"
+                      width="250px" alt="">
+                  <div id="line">Wollen High Neck Sweater</div>
+                  <div id="cost">
+                      <div id="number">₹209</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.1</div>
+                      <div id="review">3955 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/246616963/hk9fi_400.webp" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Liquid Lipsticks Matte Finish</div>
+                  <div id="cost">
+                      <div id="number">₹208</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.8</div>
+                      <div id="review">3965 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/449481485/elbx6_400.webp" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Styles earrings and Studs</div>
+                  <div id="cost">
+                      <div id="number">₹141</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">4.1</div>
+                      <div id="review">146 Reviews</div>
+                  </div>
+              </div>
+          </div>
+          <div id="card">
+              <div id="about">
+                  <img src="https://images.meesho.com/images/products/416687094/wfa4b_400.webp" height="325px"
+                      width="250px" alt="">
+                  <div id="line">Fancy Mini Fan</div>
+                  <div id="cost">
+                      <div id="number">₹606</div>
+                      <div id="text">Onwards</div>
+                  </div>
+                  <div id="delivery"> Free delivery</div>
+                  <div id="rateing">
+                      <div id="num">3.8</div>
+                      <div id="review">891 Reviews</div>
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+        
+        
+
+       
+      </div>
+      <div class="category_heading">Shop By Category</div>
+      <div class="category_items">
+        <div id="cards">
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSw0wIA-0Z24GL10bEA23xo8PIzWC_fHgmeoRq2sIJK_Z13Xs9zb4WciSqHZScXPBVNoK989_rqYLke2ZIif7fHHVr0dWVMmfdB78OFX0w" height="300px"
+                        width="250px" alt="">
+                    <div id="line">Pretty Feminine Women Dresses</div>
+                    <div id="cost">
+                        <div id="number">₹289</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.0</div>
+                        <div id="review">3955 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1RpCw3_eBsL_LNh907_b_72ppZSTmUk6EVV21k0Odldsj5BgGt9SoWWA&s"height="325px" width="250px" alt="">
+                    <div id="line">Lehenga choli withdesigner</div>
+                    <div id="cost">
+                        <div id="number">₹538</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.2</div>
+                        <div id="review">52 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLeWm48bc86FmFVNuirRE2kpKvctDQw3kx5Kw82RkHa-MdynHBZ0Q5RFo&s" height="282px"
+                        width="250px" alt="">
+                    <div id="line"> Men and Boys Round Neck Printed Cotton Blend Blend Full Sleeve</div>
+                    <div id="cost">
+                        <div id="number">₹231</div>
+                        <div id="text">onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">3.2</div>
+                        <div id="review">11041 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://images.meesho.com/images/products/204307799/pd2lf_1200.jpg" height="325px"
+                        width="250px" alt="">
+                    <div id="line">Daniel Carl Handbag</div>
+                    <div id="cost">
+                        <div id="number">₹222</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.0</div>
+                        <div id="review">156372 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkzZML4fvtDNb6Uwl7UojmBcDkPzY2qg5XaT_YSDtAwdCRxhvljdP-GQE&s" height="321px"
+                        width="250px" alt="">
+                    <div id="line">Women Modern Jutties</div>
+                    <div id="cost">
+                        <div id="number">₹248</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.0</div>
+                        <div id="review">6311 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShSnXnIMIk3IoJ4-k87KbFDwajuAI39ISSIYoVTdsiOSPs1LZ8KMe3Cp8&s" height="325px"
+                        width="250px" alt="">
+                    <div id="line">Classy Women watches</div>
+                    <div id="cost">
+                        <div id="number">₹166</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">3.7</div>
+                        <div id="review">10229 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3x5MFBqvbOsAB2V7oHtvkbmXDD15ZPvT_IfzI51opNHUbT5Zk1Tn6gVM&s" height="323px"
+                        width="250px" alt="">
+                    <div id="line">Wollen High Neck Sweater</div>
+                    <div id="cost">
+                        <div id="number">₹209</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.1</div>
+                        <div id="review">3955 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://images.meesho.com/images/products/372404052/qg4x0_1200.jpg" height="325px"
+                        width="250px" alt="">
+                    <div id="line">Liquid Lipsticks Matte Finish</div>
+                    <div id="cost">
+                        <div id="number">₹208</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">3.8</div>
+                        <div id="review">3965 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR45-AuzKqX0jg2hrAIfiEMx4d6m1u1jMd1dSNn-6Q4VHYgK3G3Hjbx8I8&s" height="325px"
+                        width="250px" alt="">
+                    <div id="line">Styles earrings and Studs</div>
+                    <div id="cost">
+                        <div id="number">₹141</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">4.1</div>
+                        <div id="review">146 Reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div id="about">
+                    <img src="https://images.meesho.com/images/products/382443485/y7hdl_400.webp" height="325px"
+                        width="250px" alt="">
+                    <div id="line">Fancy Mini Fan</div>
+                    <div id="cost">
+                        <div id="number">₹606</div>
+                        <div id="text">Onwards</div>
+                    </div>
+                    <div id="delivery"> Free delivery</div>
+                    <div id="rateing">
+                        <div id="num">3.8</div>
+                        <div id="review">891 Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="footer_column">
+          <h3>Online Shopping</h3>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">Kids</a>
+          <a href="#">Home & Living</a>
+          <a href="#">Beauty</a>
+          <a href="#">Gift Cards</a>
+          <a href="#">Myntra Insider</a>
+      </div>
+      <div class="footer_column1">
+        <div class="footer_column1">
+            <h3>CUSTOMER POLICIES</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">T&C</a>
+            <a href="#">Terms Of Use</a>
+            <a href="#">Track Orders</a>
+            <a href="#">Shipping</a>
+            <a href="#">Cancellation</a>
+          </div>
+      </div>
+      <hr>
+    </footer>
+  </body>
+</html>
 
 
